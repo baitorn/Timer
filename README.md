@@ -6,7 +6,7 @@
 
 ## 🚀 Démo en ligne
 
-👉 https://tonpseudo.github.io/timer
+👉 https://baitorn.github.io/timer
 
 ---
 
@@ -15,7 +15,7 @@
 Timer Pro est une application web légère qui fonctionne directement dans le navigateur 📱💻
 
 Elle permet de :
-- 🕒 Afficher l’heure en temps réel  
+- 🕒 Afficher l'heure en temps réel  
 - 🔔 Programmer une alarme (réveil)  
 - ⏱️ Utiliser un chronomètre précis  
 - 🎯 Avoir une interface simple et rapide  
@@ -25,12 +25,12 @@ Elle permet de :
 ## 📸 Fonctionnalités
 
 ### 🕒 Horloge en direct
-Affiche l’heure actuelle qui se met à jour chaque seconde.
+Affiche l'heure actuelle qui se met à jour chaque seconde.
 
 ### 🔔 Réveil intelligent
-- Choix d’une heure précise
-- Déclenchement automatique d’une alarme sonore
-- Bouton pour arrêter l’alarme
+- Choix d'une heure précise
+- Déclenchement automatique d'une alarme sonore
+- Bouton pour arrêter l'alarme
 
 ### ⏱️ Chronomètre
 - Start / Stop / Reset
@@ -47,3 +47,21 @@ Affiche l’heure actuelle qui se met à jour chaque seconde.
 ---
 
 ## 📁 Structure du projet
+
+```
+timer/
+├── index.html      (Page principale)
+├── style.css       (Styles)
+├── script.js       (Logique JavaScript)
+└── README.md       (Ce fichier)
+```
+
+---
+
+## 👨‍💻 Auteur
+
+**baitorn** - GitHub Projects
+
+---
+
+**Enjoy! ⏰**
