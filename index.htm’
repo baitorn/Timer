@@ -1,1 +1,45 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>⏱️ Timer</h1>
+
+    <!-- HORLOGE -->
+    <div id="clock">00:00:00</div>
+
+    <hr>
+
+    <!-- REVEIL -->
+    <h2>🔔 Réveil</h2>
+    <input type="time" id="alarmTime">
+    <div>
+      <button onclick="setAlarm()">Activer alarme</button>
+      <button onclick="stopAlarm()">Stop alarme</button>
+    </div>
+
+    <hr>
+
+    <!-- CHRONO -->
+    <h2>⏱️ Chronomètre</h2>
+    <div id="chrono">00:00:00</div>
+
+    <div>
+      <button onclick="startChrono()">Start</button>
+      <button onclick="stopChrono()">Stop</button>
+      <button onclick="resetChrono()">Reset</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
