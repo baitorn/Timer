@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⏱️ Timer Pro — Réveil & Chronomètre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⏱️ Timer Pro</h1>
+
+        <!-- 🕒 HORLOGE -->
+        <section>
+            <h2>🕒 Horloge</h2>
+            <div id="clock" style="font-size: 50px; font-weight: bold;">00:00:00</div>
+        </section>
+
+        <hr>
+
+        <!-- 🔔 ALARME -->
+        <section>
+            <h2>🔔 Alarme (Réveil)</h2>
+            <input type="time" id="alarmTime" placeholder="Heure de l'alarme">
+            <br>
+            <button onclick="setAlarm()">⏰ Régler l'alarme</button>
+            <button onclick="stopAlarm()">🛑 Arrêter l'alarme</button>
+        </section>
+
+        <hr>
+
+        <!-- ⏱️ CHRONO -->
+        <section>
+            <h2>⏱️ Chronomètre</h2>
+            <div id="chrono" style="font-size: 40px; font-weight: bold;">00:00:00</div>
+            <br>
+            <button onclick="startChrono()">▶️ Démarrer</button>
+            <button onclick="stopChrono()">⏸️ Arrêter</button>
+            <button onclick="resetChrono()">🔄 Réinitialiser</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
