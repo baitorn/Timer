@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#clock {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+#chrono {
+  font-size: 40px;
+  margin: 15px 0;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px 0;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #444;
+  color: white;
+}
+
+hr {
+  margin: 20px 0;
+  border: 1px solid #333;
+}
