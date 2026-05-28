@@ -1,72 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⏱️ Timer Pro — Réveil & Chronomètre</title>
 
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>⏱️ Timer Pro</title>
+
+    <!-- 🎨 CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- 🔤 Police -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>⏱️ Timer Pro</h1>
+    <div class="background"></div>
+
+    <main class="container">
+
+        <!-- 🏆 TITRE -->
+        <header>
+            <h1>⏱️ Timer Pro</h1>
+            <p>Horloge • Réveil • Chronomètre</p>
+        </header>
 
         <!-- 🕒 HORLOGE -->
-        <section>
+        <section class="card">
+
             <h2>🕒 Horloge</h2>
-            <div id="clock" style="font-size: 50px; font-weight: bold;">
+
+            <div id="clock" class="big-time">
                 00:00:00
             </div>
+
         </section>
 
-        <hr>
+        <!-- 🔔 REVEIL -->
+        <section class="card">
 
-        <!-- 🔔 ALARME -->
-        <section>
-            <h2>🔔 Alarme (Réveil)</h2>
+            <h2>🔔 Réveil</h2>
 
             <input type="time" id="alarmTime">
 
-            <br><br>
+            <!-- 🎵 sonnerie -->
+            <select id="ringtone">
 
-            <button onclick="setAlarm()">
-                ⏰ Régler l'alarme
-            </button>
+                <option value="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg">
+                    Sonnerie 1
+                </option>
 
-            <button onclick="stopAlarm()">
-                🛑 Arrêter l'alarme
-            </button>
+                <option value="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg">
+                    Sonnerie 2
+                </option>
+
+                <option value="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg">
+                    Sonnerie 3
+                </option>
+
+            </select>
+
+            <div class="buttons">
+
+                <button onclick="setAlarm()">
+                    ⏰ Activer
+                </button>
+
+                <button onclick="stopAlarm()">
+                    🛑 Stop
+                </button>
+
+            </div>
+
         </section>
 
-        <hr>
+        <!-- ⏱️ CHRONO -->
+        <section class="card">
 
-        <!-- ⏱️ CHRONOMÈTRE -->
-        <section>
             <h2>⏱️ Chronomètre</h2>
 
-            <div id="chrono" style="font-size: 40px; font-weight: bold;">
+            <div id="chrono" class="big-time">
                 00:00:00
             </div>
 
-            <br><br>
+            <div class="buttons">
 
-            <button onclick="startChrono()">
-                ▶️ Démarrer
-            </button>
+                <button onclick="startChrono()">
+                    ▶️ Start
+                </button>
 
-            <button onclick="stopChrono()">
-                ⏸️ Arrêter
-            </button>
+                <button onclick="stopChrono()">
+                    ⏸️ Pause
+                </button>
 
-            <button onclick="resetChrono()">
-                🔄 Réinitialiser
-            </button>
+                <button onclick="resetChrono()">
+                    🔄 Reset
+                </button>
+
+            </div>
+
         </section>
 
-    </div>
+    </main>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
