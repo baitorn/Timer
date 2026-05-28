@@ -1,19 +1,31 @@
 # Timer Pro
 
-Timer Pro est une application web moderne regroupant une horloge en temps réel, un réveil avec sonnerie personnalisable et un chronomètre.
+Site en ligne :  
+https://TONPSEUDO.github.io/NOMDUREPO
 
-Le projet a été développé en HTML, CSS et JavaScript avec une interface responsive adaptée aux téléphones et ordinateurs.
+---
+
+## Description
+
+Timer Pro est une application web moderne regroupant :
+
+- une horloge en temps réel
+- un réveil avec plusieurs sonneries
+- un chronomètre
+- une interface responsive compatible mobile
+
+Le projet a été développé en HTML, CSS et JavaScript.
 
 ---
 
 ## Fonctionnalités
 
-- Horloge en temps réel
+- Horloge en direct
 - Réveil avec sélection de sonnerie
-- Chronomètre avec démarrage, pause et réinitialisation
-- Interface moderne et responsive
-- Compatible mobile et navigateur web
-- Déploiement via GitHub Pages
+- Chronomètre
+- Interface moderne
+- Compatible téléphone et ordinateur
+- Mise en ligne avec GitHub Pages
 
 ---
 
