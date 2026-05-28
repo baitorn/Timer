@@ -1,54 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 🌍 BODY */
 body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: white;
-  text-align: center;
-  margin: 0;
-  padding: 20px;
+
+    font-family: "Poppins", sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b,
+            #111827
+        );
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
 }
 
+/* 🌌 Background */
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(59,130,246,0.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            rgba(168,85,247,0.25),
+            transparent 30%
+        );
+
+    z-index: -1;
+}
+
+/* 📦 Container */
 .container {
-  max-width: 500px;
-  margin: auto;
+
+    width: 100%;
+
+    max-width: 500px;
 }
 
-h1 {
-  margin-bottom: 20px;
+/* 🏆 Header */
+header {
+
+    text-align: center;
+
+    margin-bottom: 25px;
 }
 
-#clock {
-  font-size: 50px;
-  margin-bottom: 20px;
+header h1 {
+
+    font-size: 42px;
+
+    font-weight: 700;
 }
 
-#chrono {
-  font-size: 40px;
-  margin: 15px 0;
+.subtitle {
+
+    color: #cbd5e1;
+
+    margin-top: 8px;
 }
 
-input {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  margin: 10px 0;
+/* 🧱 Cards */
+.card {
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
 }
 
-button {
-  margin: 5px;
-  padding: 10px 15px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
+/* 🕒 Horloge */
+.big-time {
+
+    font-size: 52px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    margin-top: 15px;
 }
 
-button:hover {
-  background: #444;
-  color: white;
+/* ⏱️ Chrono */
+.chrono-time {
+
+    font-size: 42px;
+
+    text-align: center;
+
+    margin: 20px 0;
+
+    font-weight: bold;
 }
 
-hr {
-  margin: 20px 0;
-  border: 1px solid #333;
+/* 🔔 Input + Select */
+input,
+select {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    margin-top: 15px;
+
+    font-size: 18px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    color: white;
+}
+
+input:focus,
+select:focus {
+
+    outline:
+        2px solid #3b82f6;
+}
+
+/* 🔘 Buttons */
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+}
+
+.btn {
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 12px 18px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn:hover {
+
+    transform: scale(1.05);
+}
+
+/* 🎨 Colors */
+.start {
+    background: #22c55e;
+}
+
+.stop {
+    background: #ef4444;
+}
+
+.pause {
+    background: #f59e0b;
+}
+
+.reset {
+    background: #3b82f6;
+}
+
+/* 📌 Footer */
+footer {
+
+    text-align: center;
+
+    margin-top: 15px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
 }
