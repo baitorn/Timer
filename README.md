@@ -28,7 +28,7 @@ Le projet a été développé en HTML, CSS et JavaScript avec une interface resp
 ## Structure du projet
 
 ```text
-index.html
-style.css
-script.js
 README.md
+index.html
+script.js
+style.css
