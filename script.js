@@ -1,94 +1,188 @@
-//////////////////////
-// 🔔 REVEIL
-//////////////////////
-
-let alarmTime = null;
-let alarmActive = false;
-let alarmSound = null;
-
-//////////////////////
-// ⏱️ CHRONO
-//////////////////////
-
-let chronoSeconds = 0;
-let chronoInterval = null;
-
-//////////////////////
-// 🕒 HORLOGE + ALARME
-//////////////////////
+//////////////////////////////
+// 🕒 HORLOGE
+//////////////////////////////
 
 function updateClock() {
-  let now = new Date();
 
-  let h = String(now.getHours()).padStart(2, '0');
-  let m = String(now.getMinutes()).padStart(2, '0');
-  let s = String(now.getSeconds()).padStart(2, '0');
+    const now = new Date();
 
-  document.getElementById("clock").textContent = `${h}:${m}:${s}`;
+    const h =
+        String(now.getHours()).padStart(2, "0");
 
-  // vérifie alarme
-  if (alarmTime && `${h}:${m}` === alarmTime && !alarmActive) {
-    triggerAlarm();
-  }
+    const m =
+        String(now.getMinutes()).padStart(2, "0");
+
+    const s =
+        String(now.getSeconds()).padStart(2, "0");
+
+    document.getElementById("clock").textContent =
+        `${h}:${m}:${s}`;
 }
 
 setInterval(updateClock, 1000);
 
-//////////////////////
-// 🔔 ALARME
-//////////////////////
+updateClock();
 
-function setAlarm() {
-  alarmTime = document.getElementById("alarmTime").value;
-  alert("⏰ Alarme réglée pour " + alarmTime);
+//////////////////////////////
+// 🔔 ALARME
+//////////////////////////////
+
+let alarmTime = null;
+
+let alarmSound = null;
+
+let alarmPlaying = false;
+
+window.setAlarm = function () {
+
+    alarmTime =
+        document.getElementById("alarmTime").value;
+
+    if (!alarmTime) {
+
+        alert("⚠️ Choisis une heure !");
+
+        return;
+    }
+
+    alert("⏰ Alarme réglée pour " + alarmTime);
+};
+
+function checkAlarm() {
+
+    if (!alarmTime || alarmPlaying) return;
+
+    const now = new Date();
+
+    const currentTime =
+        `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+
+    if (currentTime === alarmTime) {
+
+        triggerAlarm();
+    }
 }
+
+setInterval(checkAlarm, 1000);
 
 function triggerAlarm() {
-  alarmActive = true;
 
-  alarmSound = new Audio("https://www.soundjay.com/buttons/sounds/beep-07.mp3");
-  alarmSound.loop = true;
-  alarmSound.play();
+    alarmPlaying = true;
 
-  alert("🔔 ALARME !!!");
+    // 🎵 SONNERIE CHOISIE
+    const selectedRingtone =
+        document.getElementById("ringtone").value;
+
+    alarmSound =
+        new Audio(selectedRingtone);
+
+    alarmSound.loop = true;
+
+    alarmSound.play()
+
+        .then(() => {
+
+            // 📳 vibration téléphone
+            if (navigator.vibrate) {
+
+                navigator.vibrate([
+                    500,
+                    300,
+                    500,
+                    300
+                ]);
+            }
+
+            alert("🔔 ALARME !!!");
+        })
+
+        .catch(error => {
+
+            console.log(error);
+
+            alert(
+                "⚠️ Le navigateur bloque le son."
+            );
+        });
 }
 
-function stopAlarm() {
-  if (alarmSound) {
-    alarmSound.pause();
-    alarmSound.currentTime = 0;
-  }
-  alarmActive = false;
+window.stopAlarm = function () {
+
+    if (alarmSound) {
+
+        alarmSound.pause();
+
+        alarmSound.currentTime = 0;
+    }
+
+    alarmPlaying = false;
+
+    if (navigator.vibrate) {
+
+        navigator.vibrate(0);
+    }
+};
+
+//////////////////////////////
+// ⏱️ CHRONOMETRE
+//////////////////////////////
+
+let chronoSeconds = 0;
+
+let chronoInterval = null;
+
+function updateChronoDisplay() {
+
+    const h =
+        String(
+            Math.floor(chronoSeconds / 3600)
+        ).padStart(2, "0");
+
+    const m =
+        String(
+            Math.floor(
+                (chronoSeconds % 3600) / 60
+            )
+        ).padStart(2, "0");
+
+    const s =
+        String(
+            chronoSeconds % 60
+        ).padStart(2, "0");
+
+    document.getElementById("chrono").textContent =
+        `${h}:${m}:${s}`;
 }
 
-//////////////////////
-// ⏱️ CHRONO
-//////////////////////
+window.startChrono = function () {
 
-function updateChrono() {
-  let h = String(Math.floor(chronoSeconds / 3600)).padStart(2, '0');
-  let m = String(Math.floor((chronoSeconds % 3600) / 60)).padStart(2, '0');
-  let s = String(chronoSeconds % 60).padStart(2, '0');
+    if (chronoInterval) return;
 
-  document.getElementById("chrono").textContent = `${h}:${m}:${s}`;
-}
-
-function startChrono() {
-  if (!chronoInterval) {
     chronoInterval = setInterval(() => {
-      chronoSeconds++;
-      updateChrono();
+
+        chronoSeconds++;
+
+        updateChronoDisplay();
+
     }, 1000);
-  }
-}
+};
 
-function stopChrono() {
-  clearInterval(chronoInterval);
-  chronoInterval = null;
-}
+window.stopChrono = function () {
 
-function resetChrono() {
-  stopChrono();
-  chronoSeconds = 0;
-  updateChrono();
-}
+    clearInterval(chronoInterval);
+
+    chronoInterval = null;
+};
+
+window.resetChrono = function () {
+
+    clearInterval(chronoInterval);
+
+    chronoInterval = null;
+
+    chronoSeconds = 0;
+
+    updateChronoDisplay();
+};
+
+updateChronoDisplay();
