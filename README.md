@@ -1,13 +1,13 @@
-# Timer Pro
+# Just Timer
 
 Site en ligne :  
-https://TONPSEUDO.github.io/NOMDUREPO
+https://baitorn.github.io/timer
 
 ---
 
 ## Description
 
-Timer Pro est une application web moderne regroupant :
+Just Timer est une application web moderne regroupant :
 
 - une horloge en temps réel
 - un réveil avec plusieurs sonneries
@@ -42,5 +42,5 @@ Le projet a été développé en HTML, CSS et JavaScript.
 ```text
 README.md
 index.html
-script.js
 style.css
+script.js
